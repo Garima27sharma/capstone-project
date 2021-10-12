@@ -29,9 +29,9 @@ The `serverless.yml` file has the following functions:
 
 - `issueBook` - creates book for a current user. The schema of data sent by a client application to this function can be found in the `CreateBookRequest.ts` file. It receives new book to be created in JSON format.
 
-- `UpdateBook` - updates a book created by a current user. The schema of data sent by a client application to this function can be found in the `UpdateBookRequest.ts` file. It receives an object that contains four fields that can be updated in a book item. The id of an item that should be updated is passed as a URL parameter.
+- `UpdateBook` - updates a book issued by a current user. The schema of data sent by a client application to this function can be found in the `UpdateBookRequest.ts` file. It receives an object that contains four fields that can be updated in a book item. The id of an item that should be updated is passed as a URL parameter.
 
-- `DeleteBook` - deletes a book created by a current user. Also deletes any attached image from the S3 bucket.
+- `DeleteBook` - deletes a book issued by a current user. Also deletes any attached image from the S3 bucket.
 
 - `GenerateUploadUrl` - returns a pre-signed URL that can be used to upload an attachment file for book item. An id of a user can be extracted from a JWT token passed by a client. Also deletes any previously attached image from the S3 bucket.
 
