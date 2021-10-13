@@ -18,7 +18,6 @@ import {
 import { issueBook, deleteBook, getBooks, patchBook } from '../api/librarys-api'
 import Auth from '../auth/Auth'
 import { Library } from '../types/Library'
-let d
 interface LibrarysProps {
   auth: Auth
   history: History
@@ -266,17 +265,12 @@ export class Librarys extends React.PureComponent<LibrarysProps, LibrarysState> 
 
   calculateIssueDate(): string {
     const date = new Date()
-    let d1 =  date.setDate(date.getDate())
-    return dateFormat(d1, 'yyyy-mm-dd') as string
+    date.setDate(date.getDate())
+    return dateFormat(date, 'yyyy-mm-dd') as string
   }
-  calculateDueDate(d1): string {
+  calculateDueDate(): string {
     const date = new Date()
     date.setDate(date.getDate() + 7)
-
     return dateFormat(date, 'yyyy-mm-dd') as string
   }
 }
-var d1 = new Date();
-var d2 = new Date(d1);
-var same = d1.getTime() === d2.getTime();
-var notSame = d1.getTime() !== d2.getTime();
